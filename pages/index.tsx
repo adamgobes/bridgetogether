@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Let's Bridge, Together!
+          Let&apos;s Bridge, Together!
         </h1>
 
         <div className={styles.grid}>
