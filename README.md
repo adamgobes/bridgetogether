@@ -2,12 +2,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
+You'll need nodeJS >= 12.22 for this. You can juggle multiple nodeJS versions on the same machine with `nvm` if necessary. Once nodeJS is installed, run
+```bash
+npm install
+```
+
+## Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
