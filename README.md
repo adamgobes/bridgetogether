@@ -23,9 +23,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Create a production build
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+As soon as updates are pushed to the `main` branch, Vercel picks things up and runs a production build. You can do this locally with:
+```bash
+yarn run build
+```
+
+This will typecheck the code and compile everything in a production-ready bundle.
+
+The app then is available at [https://bridgetogether.vercel.app/](https://bridgetogether.vercel.app/)
+
+
+
 
 ## Learn More
 
