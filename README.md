@@ -8,10 +8,15 @@ You'll need nodeJS >= 12.22 for this. You can juggle multiple nodeJS versions on
 npm install
 ```
 
+Then install `yarn` with:
+```bash
+npm install -g yarn
+```
+
 ## Run the development server:
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
