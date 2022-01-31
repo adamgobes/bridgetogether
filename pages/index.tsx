@@ -40,12 +40,12 @@ const Home: NextPage = () => {
           </h1>
 
           <div className={styles.grid}>
-            <a href="javascript:;" className={styles.card}>
+            <a className={styles.card}>
               <h2>Connect Wallet &rarr;</h2>
               <Connector/>
             </a>
 
-            <a href="javascript:;" className={styles.card}>
+            <a className={styles.card}>
               <h2>Real-Time Brigers &rarr;</h2>
               <p>Look at batches in real-time before jumping in</p>
             </a>
