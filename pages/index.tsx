@@ -19,7 +19,7 @@ const connectors = ({ chainId }) => {
   return [
     new InjectedConnector({
       chains,
-      options: { shimDisconnect: false },
+      options: { shimDisconnect: true },
     }),
   ]
 }

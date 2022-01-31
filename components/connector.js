@@ -1,5 +1,17 @@
 import { useAccount, useConnect } from 'wagmi'
 
+const getReadyStatus = (readyStatus) => {
+  if (readyStatus === undefined) {
+    return 'unclear'
+  } else if (readyStatus === true) {
+    return 'yes'
+  } else if (readyStatus === false) {
+    return 'no'
+  } else {
+    return 'wut'
+  }
+}
+
 const Connector = () => {
   const [{ data: connectData, error: connectError }, connect] = useConnect()
   const [{ data: accountData }, disconnect] = useAccount({
@@ -24,9 +36,8 @@ const Connector = () => {
         <br/>
       </p>
       {connectData.connectors.map((x) => (
-        <button disabled={!x.ready} key={x.id} onClick={() => connect(x)}>
-          {x.name}
-          {!x.ready && ' (unsupported)'}
+        <button key={x.id} onClick={() => connect(x)}>
+          {x.name} (ready? {getReadyStatus(x.ready)})
         </button>
       ))}
 
