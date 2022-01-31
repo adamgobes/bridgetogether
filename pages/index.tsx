@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Connector from '../components/Connector'
+import Connector from '../components/connector'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -12,7 +12,7 @@ const VERSION = 'v0.0.1 - pre-alpha';
 const chains = defaultChains
 
 // Set up connectors
-const connectors = ({ chainId }) => {
+const connectors = ({ chainId } : any) => {
   const rpcUrl =
     chains.find((x) => x.id === chainId)?.rpcUrls?.[0] ??
     chain.mainnet.rpcUrls[0]

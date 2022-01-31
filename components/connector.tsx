@@ -1,6 +1,6 @@
 import { useAccount, useConnect } from 'wagmi'
 
-const getReadyStatus = (readyStatus) => {
+const getReadyStatus = (readyStatus: any): string => {
   if (readyStatus === undefined) {
     return 'unclear'
   } else if (readyStatus === true) {
@@ -21,7 +21,7 @@ const Connector = () => {
   if (accountData) {
     return (
       <div>
-        <div>Connected to {accountData.connector.name}</div>
+        <div>Connected to {accountData && accountData.connector && accountData.connector.name}</div>
         <div>
             As {accountData.address}
         </div>
