@@ -9,13 +9,10 @@ const Connector = () => {
   if (accountData) {
     return (
       <div>
-        <img src={accountData.ens?.avatar} alt="ENS Avatar" />
-        <div>
-          {accountData.ens?.name
-            ? `${accountData.ens?.name} (${accountData.address})`
-            : accountData.address}
-        </div>
         <div>Connected to {accountData.connector.name}</div>
+        <div>
+            As {accountData.address}
+        </div>
         <button onClick={disconnect}>Disconnect</button>
       </div>
     )
