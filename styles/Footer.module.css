@@ -1,16 +1,10 @@
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
 
-.footer a {
+.marqueeFooter {
+  width: 100vw;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  background-color: black;
 }
-
