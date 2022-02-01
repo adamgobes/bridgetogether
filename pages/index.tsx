@@ -31,10 +31,13 @@ const Home: NextPage = () => {
         <Head>
           <title>BridgeTogether - {VERSION}</title>
           <meta name="description" content="App written during Coinbase's SmartContract HackDays 2022" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
 
         <main className={styles.main}>
+          <span className={styles.logo}>
+            <img alt="BridgeIt logo" src="/bridgeit-logo.png"/>
+          </span>
           <h1 className={styles.title}>
             Let&apos;s Bridge, Together!
           </h1>
@@ -53,13 +56,7 @@ const Home: NextPage = () => {
         </main>
 
         <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
             Copyright &copy; Coinbase Inc
-          </a>
         </footer>
       </div>
     </Provider>
