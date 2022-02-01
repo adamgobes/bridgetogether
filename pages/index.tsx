@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           <div className={styles.contentWrapper}>
             <div className={styles.leftSide}>
               <h1>Start saving money today by bridging together</h1>
-              <p>Gas fees are super high and it takes even more to cross the bridge, let's bridge together?</p>
+              <p>Gas fees are super high and it takes even more to cross the bridge, let&apos;s bridge together?</p>
               <div className={styles.buttonWrapper}>
                 <Button>Launch App</Button>
               </div>
