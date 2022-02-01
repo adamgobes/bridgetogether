@@ -1,0 +1,12 @@
+.button {
+    border: none;
+    border-radius: 50px;
+    padding: var(--padding-button);
+    width: 100%;
+    line-height: 1.6;
+    cursor: pointer;
+    font-size: var(--font-large);
+    font-family: var(--sans);
+    background: var(--primary);
+    color: white;
+}
