@@ -1,4 +1,6 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Button } from '../components/Button'
 import { useFeedsSaved } from '../lib/useFeedsSaved'
@@ -14,13 +16,13 @@ const Home: NextPage = () => {
           <h1>Start saving money today by bridging together</h1>
           <p>Gas fees are super high and it takes even more to cross the bridge, let&apos;s bridge together?</p>
           <div className={styles.buttonWrapper}>
-            <a href="/app">
+            <Link href="/app" passHref>
                 <Button>Launch App</Button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className={styles.rightSide}>
-          <img alt="BridgeIt logo" src="/golden-eth.png" />
+          <Image alt="BridgeIt logo" src="/golden-eth.png" width="687" height="523"/>
         </div>
       </div>
       <div className={styles.marqueeFooter}>

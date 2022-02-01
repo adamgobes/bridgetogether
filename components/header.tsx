@@ -1,10 +1,14 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Header.module.css'
 
 const Header = () => {
   return (
-    <span className={styles.logo}>
-      <img alt="BridgeIt logo" src="/bridgeit-logo.png"/>
-    </span>
+    <Link href="/" passHref>
+      <span className={styles.logo}>
+        <Image alt="BridgeIt logo" src="/bridgeit-logo.png" width="127" height="29"/>
+      </span>
+    </Link>
   )
 }
 
