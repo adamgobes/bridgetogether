@@ -33,12 +33,4 @@ contract BridgeTogether {
     function getBalance() public view returns (uint256) {
         return balances[msg.sender];
     }
-
-    function bridge() public {
-        /**
-		iterate balances
-		copy to l2balances
-		clear balances
-	*/
-    }
 }
