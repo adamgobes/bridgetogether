@@ -1,13 +1,3 @@
-.container {
-  padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 80px 58px;
-  position: relative;
-}
-
 .contentWrapper {
   display: flex;
   flex-direction: row;
@@ -38,9 +28,8 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  position: fixed;    
+  position: fixed;
   bottom: 0;
   height: 60px;
   background-color: black;
-  
 }
