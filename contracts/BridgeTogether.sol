@@ -13,7 +13,7 @@ contract BridgeTogether {
         logBalance();
     }
 
-    function withdraw(uint256 _amount) public payable {
+    function withdraw(uint256 _amount) public {
         require(
             _amount <= balances[msg.sender],
             "You can't withdraw more than your balance"
