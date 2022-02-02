@@ -14,6 +14,11 @@ const getReadyStatus = (readyStatus: any): string => {
   }
 }
 
+const abbreviateAddress = (address: string): string => {
+    var length = address.length
+    return address.slice(0,6) + "…" + address.slice(length-4, length)
+}
+
 const Connector = () => {
   const [{ data: connectData, error: connectError }, connect] = useConnect()
   const [{ data: accountData }, disconnect] = useAccount({
@@ -22,17 +27,21 @@ const Connector = () => {
 
   if (accountData) {
     return (
-      <div>
-        <div>Connected to {accountData && accountData.connector && accountData.connector.name}</div>
-        <div>
-            As {accountData.address}
-        </div>
-        <button onClick={disconnect}>Disconnect</button>
+      <div className={styles.container} onClick={disconnect}>
+          <p className={styles.copyContainer}>
+              <span className={styles.title}>
+                Wallet connected
+              </span>
+              <span className={styles.copy}>
+                {abbreviateAddress(accountData.address)} (click to disconnect)
+              </span>
+          </p>
       </div>
     )
   } else {
-    // Cheating here...coinbaseConnector could be undefined here!
+    // Cheating here...coinbaseConnector could be undefined actually!
     var coinbaseConnector = connectData.connectors.find((c) => c.name === 'Coinbase Wallet')!;
+
     return (
       <div className={styles.container} onClick={() => connect(coinbaseConnector)}>
           <p className={styles.copyContainer}>
