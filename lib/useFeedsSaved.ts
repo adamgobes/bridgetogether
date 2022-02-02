@@ -13,7 +13,7 @@ const randomNumber = (upperBound: number) =>
     Math.floor(Math.random() * (upperBound + 1));
 
 export function useFeedsSaved(): FeesSaved[] {
-    return [...Array(5)]
+    return [...Array(7)]
         .map(e => ({
             address: genRanHex(),
             saved: randomNumber(300)
