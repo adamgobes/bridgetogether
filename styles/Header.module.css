@@ -3,5 +3,6 @@
   display: block;
   position: absolute;
   top: 64px;
+  cursor: pointer;
 }
 
