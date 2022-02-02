@@ -7,3 +7,72 @@
   border-radius: 40px;
   margin: 32px 0px;
 }
+
+.source {
+  margin-bottom: 32px;
+}
+.source::after {
+  content: ' ';
+  display: block;
+  width: 460px;
+  height: 16px;
+  background: url('/bridge-divider.png');
+}
+
+.destination {
+}
+
+.networkETH, .networkMATIC {
+  background: url('/ETH.svg') left center no-repeat;
+  background-size: 32px 32px;
+  display: block;
+  font-weight: bold;
+  line-height: 32px;
+  padding-left: 40px;
+  margin-bottom: 20px
+}
+
+.networkMATIC {
+  background: url('/MATIC.svg') left center no-repeat;
+}
+
+.networkETH::after, .networkMATIC::after {
+  content: ' ';
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-left: 8px;
+  background: url('/caret-down.png');
+}
+
+.input {
+  font-size: 32px;
+  line-height: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.input, .input:focus {
+  background: transparent;
+  border: none;
+  outline-width: 0;
+  color: #FFF;
+}
+
+.input::placeholder {
+  color: #BFC4CF
+}
+
+.estimateContainer {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+}
+.estimateLabel {
+  display: block;
+}
+
+.buttonContainer {
+  width: 176px;
+  margin: 0 auto;
+}
