@@ -1,0 +1,41 @@
+.wrapper {
+    position: fixed;
+    top: 10px;
+    width: 452px;
+    background: inherit;
+}
+
+.alertWrapper {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #80dfa8;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 6px;
+    border-radius: 6px;
+    transition: opacity 600ms, visibility 600ms;
+}
+
+.alertWrapperClosed {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.alertWrapperOpen {
+    opacity: 1;
+    visibility: visible;
+}
+
+.alertText {
+    color: white;
+    font-size: 0.8em;
+}
+
+.link {
+    color: #235be8;
+}
+
+.exitWrapper {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}

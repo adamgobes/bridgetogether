@@ -5,12 +5,13 @@ import styles from '../styles/Layout.module.css'
 import Connector from '../components/connector'
 import { Provider, chain, defaultChains } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
+import { providers } from 'ethers'
 
 // Chains for connectors to support
 const chains = defaultChains
 
 // Set up connectors
-const connectors = ({ chainId } : any) => {
+const connectors = ({ chainId }: any) => {
   const rpcUrl =
     chains.find((x) => x.id === chainId)?.rpcUrls?.[0] ??
     chain.mainnet.rpcUrls[0]
@@ -22,17 +23,20 @@ const connectors = ({ chainId } : any) => {
   ]
 }
 
-export default function Layout({ children } : any) {
+export default function Layout({ children }: any) {
+  const provider = ({ chainId }: any) =>
+    new providers.AlchemyProvider(chainId, '8O-E10g_g_gMgX4e-MfQVo27jH9xIuwl')
+
   return (
-    <Provider autoConnect connectors={connectors}>
+    <Provider autoConnect connectors={connectors} provider={provider}>
       <div className={styles.container}>
-        <MetaHead/>
+        <MetaHead />
         <main className={styles.main}>
-          <Header/>
+          <Header />
           {children}
         </main>
 
-        <Footer/>
+        <Footer />
 
       </div>
     </Provider>

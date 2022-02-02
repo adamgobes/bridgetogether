@@ -1,24 +1,172 @@
 import { ethers } from 'ethers';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useContractWrite } from 'wagmi';
 import styles from '../styles/Bridge.module.css'
 import { Button } from './Button'
 
-const bridgeTogetherABI = ''
+const bridgeTogetherABI = [
+    {
+        "inputs": [
+            {
+                "internalType": "address payable",
+                "name": "_ovmL1StandardBridge",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "accountAddress",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "LogBalance",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "accountAddress",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "LogDeposit",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "accountAddress",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "LogWithdraw",
+        "type": "event"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "fallback"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "destination",
+                "type": "address"
+            }
+        ],
+        "name": "bridge",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "deposit",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "ovmL1StandardBridge",
+        "outputs": [
+            {
+                "internalType": "contract L1StandardBridge",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "withdraw",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
+    }
+]
 
-const Bridge = () => {
+const Bridge = ({ setTx }: { setTx: (tx: string) => void }) => {
     const [eth, setEth] = useState<string>('');
 
     const [{ data, error, loading }, write] = useContractWrite(
         {
-            addressOrName: process.env.NEXT_PUBLIC_BRIDGE_TOGETHER_CONTRACT!,
+            addressOrName: '0xfe3b0c57a0a31b8b9ab02beb504d204e2aeb4f5c',
             contractInterface: bridgeTogetherABI,
         },
-        'bridge',
+        'deposit',
         {
             args: []
         }
     )
+
+    useEffect(() => {
+        if (!data) return
+        setTx(data.hash)
+        setTimeout(() => setTx(''), 5000)
+    })
 
     const bridge = useCallback(() => {
         write({ overrides: { value: ethers.utils.parseEther(eth) } })
@@ -42,7 +190,7 @@ const Bridge = () => {
                 </span>
             </div>
             <div className={styles.buttonContainer}>
-                <Button onClick={bridge}>Transfer</Button>
+                <Button onClick={bridge} loading={loading}>Transfer</Button>
             </div>
         </div>
     )
