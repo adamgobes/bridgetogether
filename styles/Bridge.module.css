@@ -37,7 +37,7 @@
   background: url('/OP.svg') left center no-repeat;
 }
 
-.networkETH::after, .networkMATIC::after {
+.networkETH::after, .networkOP::after {
   content: ' ';
   width: 12px;
   height: 12px;
