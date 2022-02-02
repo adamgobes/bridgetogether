@@ -1,0 +1,52 @@
+.container {
+  position: relative;
+  padding: 29px 34px 29px 114px;
+  width: 556px;
+  height: 114px;
+  background: #1A1A1A;
+  border-radius: 20px;
+  margin: 32px 0px;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.copy {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8A919E;
+}
+
+.copyContainer {
+  padding: 0;
+  margin: 0;
+}
+
+.copyContainer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: 34px;
+  top: 29px;
+  background: url('/coinbase-wallet-logo.png')
+}
+
+.copyContainer::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 24px;
+  top: 45px;
+  background: url('/white-chevron.png')
+}

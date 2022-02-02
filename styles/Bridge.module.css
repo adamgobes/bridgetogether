@@ -1,0 +1,9 @@
+.container {
+  padding: 48px;
+  width: 556px;
+  height: 431px;
+  background: linear-gradient(118.94deg, rgba(255, 255, 255, 0.4) 8.27%, rgba(255, 255, 255, 0.1) 95.42%);
+  backdrop-filter: blur(40px);
+  border-radius: 40px;
+  margin: 32px 0px;
+}

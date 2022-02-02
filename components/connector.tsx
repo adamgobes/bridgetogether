@@ -1,4 +1,6 @@
 import { useAccount, useConnect } from 'wagmi'
+import Image from 'next/image'
+import styles from '../styles/Connector.module.css'
 
 const getReadyStatus = (readyStatus: any): string => {
   if (readyStatus === undefined) {
@@ -29,20 +31,20 @@ const Connector = () => {
       </div>
     )
   } else {
+    // Cheating here...coinbaseConnector could be undefined here!
+    var coinbaseConnector = connectData.connectors.find((c) => c.name === 'Coinbase Wallet')!;
     return (
-      <div>
-      <p>
-        Connect your wallet with one of the options below:
-        <br/>
-      </p>
-      {connectData.connectors.map((x) => (
-        <button key={x.id} onClick={() => connect(x)}>
-          {x.name} (ready? {getReadyStatus(x.ready)})
-        </button>
-      ))}
-
-      {connectError && <div>{connectError?.message ?? 'Failed to connect'}</div>}
-    </div>
+      <div className={styles.container} onClick={() => connect(coinbaseConnector)}>
+          <p className={styles.copyContainer}>
+              <span className={styles.title}>
+                Coinbase Wallet
+              </span>
+              <span className={styles.copy}>
+                Connect using Coinbase wallet
+              </span>
+          </p>
+          {connectError && <div>{connectError?.message ?? 'Failed to connect'}</div>}
+      </div>
     )
   }
 }
