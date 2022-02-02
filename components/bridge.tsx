@@ -15,8 +15,8 @@ const Bridge = () => {
             </div>
         </div>
         <div className={styles.destination}>
-            <span className={styles.networkMATIC}>
-                To Polygon
+            <span className={styles.networkOP}>
+                To Optimism
             </span>
         </div>
         <div className={styles.buttonContainer}>
