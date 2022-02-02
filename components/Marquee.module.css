@@ -6,38 +6,45 @@
     position: absolute;
     left: 0;
     right: 0;
+    font-family: var(--mono);
+}
+
+.scrolling {
+  text-align: center;
+  animation: marquee 15s linear infinite;
+  display: inline-block;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) calc(50% - 1px),
+    var(--neutral-100) calc(50%),
+    rgba(0, 0, 0, 0) calc(50% + 1px)
+  );
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  
-  .scrolling {
-    text-align: center;
-    animation: marquee 15s linear infinite;
-    display: inline-block;
-    width: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) calc(50% - 1px),
-      var(--neutral-100) calc(50%),
-      rgba(0, 0, 0, 0) calc(50% + 1px)
-    );
+  to {
+    transform: translateX(-100%);
   }
-  
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .paused {
-    animation-play-state: paused;
-  }
-  
-  .wrapper > * {
-    background: var(--neutral-5);
-    margin: 0 2rem;
-    padding: 0 0.25rem;
-    font-size: var(--font-large);
-  }
-  
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+.wrapper > * {
+  background: var(--neutral-5);
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.container span::after {
+  content: '✸';
+  margin-left: 16px;
+  font-size: 20px;
+}
+

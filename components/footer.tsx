@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className={styles.marqueeFooter}>
       <Marquee messages={
-        feesSaved.map(f => `${f.address.substring(0, 7)}... SAVED $${f.saved}`)
+        feesSaved.map(f => `${f.address.substring(0, 7)}… SAVED $${f.saved}`)
       } />
     </div>
   )

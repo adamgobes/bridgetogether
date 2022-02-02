@@ -12,6 +12,7 @@
 
   /* font styles */
   --sans: 'DM Sans', Helvetica, sans-serif;
+  --mono: 'DM Mono', monospace;
   --weight-light: 300;
   --weight-regular: 400;
   --weight-semibold: 600;

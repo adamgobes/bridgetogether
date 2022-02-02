@@ -1,4 +1,3 @@
-
 .marqueeFooter {
   width: 100vw;
   display: flex;
@@ -7,4 +6,6 @@
   bottom: 0;
   height: 60px;
   background-color: black;
+  font-size: 14px;
+  line-height: 20px;
 }
